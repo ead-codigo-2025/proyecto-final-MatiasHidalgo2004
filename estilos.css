@@ -41,9 +41,10 @@ header {
 }
 
 .subtitulo {
-  font-size: clamp(0.8em, 2vw, 1.0em);
-  margin-top: 20px;
+  font-size: clamp(1em, 2vw, 1.0em);
+  margin: 0 0 12px 0;
   color: #f0f0f0;
+  font-family: 'Fredoka', sans-serif;
 }
 
 /* Línea */
@@ -53,24 +54,19 @@ header {
   border: 1px solid #ffffff;
 }
 
-/* Menú flotante */
 .menu-flotante {
- 
-  display: flex;
-  flex-wrap: nowrap;            
-  overflow-x: auto;              
-  white-space: nowrap;           
-  scrollbar-width: auto;        
-  scrollbar-color: #6D3D14 transparent; 
-  position: sticky;
-  margin-top: -40px;
-  top: 0;
-  overflow-x: auto;
-  padding-left: 120px; 
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
+  position: sticky;
+  top: 0;
+  margin-top: -40px;
+  padding: 10px 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: auto;
+  scrollbar-color: #6D3D14 transparent;
   z-index: 1000;
 }
 
@@ -83,6 +79,7 @@ header {
   padding: 10px 20px;
   border-radius: 12px;
   transition: all 0.3s ease;
+  border: 2px solid #975982;
 }
 
 .menu-flotante a:hover {
@@ -91,24 +88,23 @@ header {
 }
 
 .menu-flotante::-webkit-scrollbar {
-  height: 8px;                 
+  height: 8px;
 }
 
 .menu-flotante::-webkit-scrollbar-thumb {
-  background-color: #6D3D14;       
+  background-color: #6D3D14;
   border-radius: 4px;
 }
 
 .menu-flotante::-webkit-scrollbar-track {
   background: transparent;
 }
-/* Secciones */
+
 section {
   padding: 80px 20px;
   border-bottom: 1px solid #eee;
   max-width: 900px;
   margin: auto;
-
 }
 
 .sobre-mi-contenido {
@@ -127,7 +123,7 @@ section {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
+  padding-left: 0px;
   padding-right: 10px;
 }
 
@@ -137,11 +133,10 @@ h2 {
   font-family: 'Fredoka', sans-serif;
   font-weight: 400;
   margin-bottom: 20px;
-  color:#975982
+  color: #975982;
 }
 
 .foto-sobre-mi {
-  
   width: 450px;
   flex-shrink: 0;
   margin-left: 5px;
@@ -180,13 +175,13 @@ h2 {
 }
 
 .instagram-experiencia {
-  color: #000; 
+  color: #000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .instagram-experiencia:hover {
-  color: #975982; 
+  color: #975982;
 }
 
 /* Capital destacada */
@@ -219,13 +214,110 @@ h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Footer */
+.ilustraciones-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Botón más */
+.boton-mas {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.boton-mas a {
+  background-color: #975982;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  transition: all 0.3s ease;
+  border: 2px solid #975982;
+}
+
+.boton-mas a:hover {
+  background-color: white;
+  color: #975982;
+}
+
+.bloque-fanart {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.fanart-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contenedor-imagenes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.contenedor-imagenes img {
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contenedor-imagenes img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bloque-ilustraciones {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.ilustraciones-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.galeria {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.galeria img {
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 footer {
   text-align: center;
   padding: 20px;
   background-color: #f0f0f0;
   font-size: 0.9em;
 }
+
 .programas-utilizados {
   display: flex;
   justify-content: left;
@@ -244,6 +336,7 @@ footer {
   transform: scale(1.1);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .sobre-mi-contenido {
     flex-direction: column;
@@ -265,7 +358,5 @@ footer {
   .contacto {
     text-align: left;
   }
-  
 }
-
 
