@@ -244,9 +244,8 @@ footer {
     text-align: left;
   }
   .icono-programa img {
-  width: 5px;
-  height: 5px;
-  glyph-orientation-horizontal: middle;
+  width: 10px;
+  height: 10px;
   margin-left: 8px;
 }
 }
