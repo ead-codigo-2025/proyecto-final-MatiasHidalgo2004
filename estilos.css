@@ -221,7 +221,11 @@ footer {
   background-color: #f0f0f0;
   font-size: 0.9em;
 }
-
+.icono-programa img {
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+}
 @media (max-width: 768px) {
   .sobre-mi-contenido {
     flex-direction: column;
@@ -243,11 +247,7 @@ footer {
   .contacto {
     text-align: left;
   }
-  .icono-programa img {
-  width: 10px;
-  height: 10px;
-  margin-left: 8px;
-}
+  
 }
 
 
