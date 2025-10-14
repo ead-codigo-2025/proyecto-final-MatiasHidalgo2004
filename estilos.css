@@ -12,22 +12,48 @@ body {
   color: #333;
 }
 
-/* Encabezado */
-header {
-  position: relative;
-  text-align: center;
-  padding: 40px 20px 10px; 
-  background: linear-gradient(270deg, #E2C966, #975982, #E2C966);
-  background-size: 600% 600%;
-  animation: movimientoFondo 20s ease infinite;
+body.degradado{
+background: linear-gradient(150deg,
+    #E2C966 0%,
+    #E2C966 30%,
+    rgba(172, 102, 148, 0.25) 60%,
+    rgba(109, 61, 20, 0.15) 85%,
+    rgba(253, 254, 222, 0.08) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradienteSuave 14s ease-in-out infinite;
 }
 
-@keyframes movimientoFondo {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Header con degradado animado */
+header.degradado {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px 5px;
+  text-align: center;
+  background: linear-gradient(135deg,
+    #E2C966 0%,
+    #E2C966 30%,
+    rgba(151, 89, 130, 0.25) 60%,
+    rgba(109, 61, 20, 0.15) 85%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradienteSuave 16s ease-in-out infinite;
+}
+
+@keyframes gradienteSuave {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Contenido encima del fondo */
+header.degradado > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Foto */
 .foto {
   width: 80px;
   border-radius: 50%;
@@ -41,6 +67,7 @@ header {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Títulos */
 .titulo {
   font-size: clamp(3em, 6vw, 5em);
   font-family: 'Satisfy', cursive;
@@ -63,6 +90,7 @@ header {
   border: 1px solid #ffffff;
 }
 
+/* Menú */
 .menu-flotante {
   display: flex;
   justify-content: center;
@@ -121,11 +149,10 @@ section {
   padding: 80px 0;
 }
 
-/*borde solo a las secciones que no son la despedida */
+/* Borde sólo a secciones que no son despedida */
 section:not(.despedida) {
   border-bottom: 1px solid #eee;
 }
-
 
 .sin-borde {
   border-bottom: none !important;
@@ -344,7 +371,7 @@ footer {
     padding-right: 15px;
   }
 
-    .galeria img,
+  .galeria img,
   .contenedor-imagenes img {
     width: 100%;
     max-width: 400px;
@@ -364,7 +391,7 @@ footer {
     width: 100%;
     margin-top: 20px;
     justify-content: center;
-    order: 2; 
+    order: 2;
   }
 
   .boton-mas a {
