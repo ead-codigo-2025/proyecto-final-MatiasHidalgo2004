@@ -14,9 +14,18 @@ body {
 
 /* Encabezado */
 header {
+  position: relative;
   text-align: center;
-  padding: 40px 20px;
-  background-color: #E2C966;
+  padding: 40px 20px 10px; 
+  background: linear-gradient(270deg, #E2C966, #975982, #E2C966);
+  background-size: 600% 600%;
+  animation: movimientoFondo 20s ease infinite;
+}
+
+@keyframes movimientoFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .foto {
@@ -54,7 +63,6 @@ header {
   border: 1px solid #ffffff;
 }
 
-/* Menú flotante */
 .menu-flotante {
   display: flex;
   justify-content: center;
@@ -62,7 +70,6 @@ header {
   gap: 15px;
   position: sticky;
   top: 0;
-  margin-top: -40px;
   padding: 10px 20px;
   overflow-x: auto;
   white-space: nowrap;
@@ -109,19 +116,19 @@ header {
   margin: auto;
 }
 
-/* despedida sin borde */
+/* Secciones */
 section {
   padding: 80px 0;
 }
 
-/* Aplica borde solo a las secciones que no son la despedida */
+/*borde solo a las secciones que no son la despedida */
 section:not(.despedida) {
   border-bottom: 1px solid #eee;
 }
 
-/* Elimina el borde anterior a la despedida */
-section:has(+ .despedida) {
-  border-bottom: none;
+
+.sin-borde {
+  border-bottom: none !important;
 }
 
 /* Sobre mí */
@@ -302,6 +309,7 @@ h2 {
   color: #975982;
 }
 
+/* Despedida */
 .despedida {
   text-align: center;
   padding: 60px 20px;
@@ -336,13 +344,7 @@ footer {
     padding-right: 15px;
   }
 
-  .galeria,
-  .contenedor-imagenes {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .galeria img,
+    .galeria img,
   .contenedor-imagenes img {
     width: 100%;
     max-width: 400px;
