@@ -287,6 +287,7 @@ h2 {
 .contenedor-imagenes {
   display: flex;
   gap: 20px;
+  padding: 20px;
   flex-wrap: wrap;
   align-items: flex-start;
   flex: 1;
@@ -306,6 +307,52 @@ h2 {
 .contenedor-imagenes img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-con-info {
+  flex:1 1 300px;
+  max-width: 300px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imagen-con-info img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.imagen-con-info:hover img {
+  transform: scale(1.03);
+}
+
+.info-imagen {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(151, 89, 130, 0.85);
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imagen-con-info:hover .info-imagen {
+  opacity: 1;
+}
+
+/* mostrar al tocar en celular */
+@media (hover: none) and (pointer: coarse) {
+  .info-imagen {
+    opacity: 1;
+  }
 }
 
 /* Botón */
