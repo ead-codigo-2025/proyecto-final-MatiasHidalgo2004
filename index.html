@@ -7,35 +7,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Fredoka:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    .sin-borde { border-bottom: none !important; }
-    .despedida { border: none; }
-
-  </style>
 </head>
 <body>
   <header>
-    <a href="mailto:matias.hidalgo.2004@gmail.com">
-      <img src="imagenes/fotoperfil.png" alt="Foto de Matías" class="foto">
-    </a>
-    <h1 class="titulo">Portafolio</h1>
-    <p class="subtitulo">De Matías H. | Año 2026 | Ilustrador digital</p>
-    <hr class="divisor">
-  </header>
+  <a href="mailto:matias.hidalgo.2004@gmail.com">
+    <img src="imagenes/fotoperfil.png" alt="Foto de Matías" class="foto">
+  </a>
+  <h1 class="titulo">Portafolio</h1>
+  <p class="subtitulo">De Matías H. | Año 2026 | Ilustrador digital</p>
+  <hr class="divisor">
+</header>
 
-  <nav class="menu-flotante">
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-  </nav>
+<nav class="menu-flotante">
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#experiencia">Experiencia</a>
+  <a href="#proyectos">Proyectos</a>
+</nav>
 
   <main>
     <section id="sobre-mi" class="alineado" data-aos="fade-up">
       <h2>Sobre mí</h2>
       <div class="sobre-mi-contenido">
-        <img src="imagenes/fotodescripcion.svg" alt="Foto" class="foto-sobre-mi">
-        <div class="texto-sobre-mi">
+        <img src="imagenes/fotodescripcion.svg" alt="Foto" class="foto-sobre-mi" data-aos="fade-right">
+        <div class="texto-sobre-mi" data-aos="fade-left">
           <p><span class="capital">¡HOLA!</span> Soy Matías Hidalgo, estudiante de diseño e ilustrador digital.</p>
           <p>
             Soy de <em>la quinta región de Chile</em> y estudio en <em>la Pontificia Universidad Católica de Valparaíso</em> desde el año 2022.
@@ -139,9 +133,17 @@
     </section>
   </main>
 
+  <!-- Despedida animaciones -->
   <section class="despedida">
-    <p class="texto-despedida">Gracias por visitar mi portafolio. ¡Espero que lo hayas disfrutado!</p>
-    <img src="imagenes/fotodespedida.svg" alt="Ilustración de despedida" class="svg-despedida">
+    <p class="texto-despedida" data-aos="fade-up" data-aos-duration="1000">
+      Gracias por visitar mi portafolio. ¡Espero que lo hayas disfrutado!
+    </p>
+    <img src="imagenes/fotodespedida.svg"
+         alt="Ilustración de despedida"
+         class="svg-despedida"
+         data-aos="zoom-in"
+         data-aos-duration="1200"
+         data-aos-delay="300">
   </section>
 
   <footer>
@@ -150,7 +152,10 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      once: true, 
+      offset: 100 
+    });
   </script>
 </body>
 </html>
