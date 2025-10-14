@@ -109,10 +109,19 @@ header {
   margin: auto;
 }
 
-/* Secciones */
+/* despedida sin borde */
 section {
   padding: 80px 0;
+}
+
+/* Aplica borde solo a las secciones que no son la despedida */
+section:not(.despedida) {
   border-bottom: 1px solid #eee;
+}
+
+/* Elimina el borde anterior a la despedida */
+section:has(+ .despedida) {
+  border-bottom: none;
 }
 
 /* Sobre mí */
@@ -276,13 +285,16 @@ h2 {
 }
 
 .boton-mas a {
-  background-color: #975982;
+  background-color: rgba(151, 89, 130, 0.8);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 24px;
   text-decoration: none;
   font-family: 'Fredoka', sans-serif;
-  transition: all 0.3s ease;
+  font-size: 1em;
+  border-radius: 12px;
   border: 2px solid #975982;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .boton-mas a:hover {
@@ -290,7 +302,26 @@ h2 {
   color: #975982;
 }
 
-/* Footer */
+.despedida {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #E2C966;
+}
+
+.texto-despedida {
+  font-size: clamp(1em, 2vw, 1.2em);
+  color: #6D3D14;
+  margin-bottom: 20px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.svg-despedida {
+  width: 240px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -298,7 +329,7 @@ footer {
   font-size: 0.9em;
 }
 
-/* variar tamaño pantalla */
+/* Responsive */
 @media (max-width: 768px) {
   .alineado {
     padding-left: 15px;
@@ -319,9 +350,24 @@ footer {
     margin-bottom: 20px;
   }
 
+  .fanart-preview,
+  .ilustraciones-preview,
+  .personajes-preview,
+  .comic-preview {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .boton-mas {
+    width: 100%;
     margin-top: 20px;
     justify-content: center;
+    order: 2; 
+  }
+
+  .boton-mas a {
+    display: inline-block;
+    margin: 0 auto;
   }
 
   .menu-flotante {
