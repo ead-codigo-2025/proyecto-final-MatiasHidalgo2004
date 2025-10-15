@@ -12,8 +12,8 @@ body {
   color: #333;
 }
 
-body.degradado{
-background: linear-gradient(150deg,
+body.degradado {
+  background: linear-gradient(150deg,
     #E2C966 0%,
     #E2C966 30%,
     rgba(172, 102, 148, 0.25) 60%,
@@ -24,7 +24,7 @@ background: linear-gradient(150deg,
   animation: gradienteSuave 14s ease-in-out infinite;
 }
 
-/* Header con degradado animado */
+/* Encabezado con degradado animado */
 header.degradado {
   position: relative;
   overflow: hidden;
@@ -149,7 +149,6 @@ section {
   padding: 80px 0;
 }
 
-/* Borde sólo a secciones que no son despedida */
 section:not(.despedida) {
   border-bottom: 1px solid #eee;
 }
@@ -193,6 +192,7 @@ h2 {
   order: 2;
 }
 
+/* Contacto */
 .contacto {
   list-style: none;
   padding: 0;
@@ -205,7 +205,7 @@ h2 {
   gap: 10px;
   margin-bottom: 10px;
   font-size: 1rem;
-  color: #333; 
+  color: #333;
 }
 
 .contacto .icono {
@@ -230,9 +230,8 @@ h2 {
 }
 
 .contacto a:hover {
-  color: #985982; 
+  color: #985982;
 }
-
 
 .instagram-experiencia {
   color: #000;
@@ -296,6 +295,15 @@ h2 {
   flex-wrap: wrap;
 }
 
+.intro-proyectos {
+  margin-left: 0px;
+  margin-right: 20px;
+  font-size: clamp(1em, 1.8vw, 1.1em);
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
 .galeria,
 .contenedor-imagenes {
   display: flex;
@@ -323,7 +331,7 @@ h2 {
 }
 
 .imagen-con-info {
-  flex:1 1 300px;
+  flex: 1 1 300px;
   max-width: 300px;
   position: relative;
   display: inline-block;
@@ -359,13 +367,6 @@ h2 {
 
 .imagen-con-info:hover .info-imagen {
   opacity: 1;
-}
-
-/* mostrar al tocar en celular */
-@media (hover: none) and (pointer: coarse) {
-  .info-imagen {
-    opacity: 1;
-  }
 }
 
 /* Botón */
@@ -428,9 +429,83 @@ footer {
 @media (max-width: 768px) {
   .alineado {
     padding-left: 20px;
-    padding-right: 15px;
+    padding-right: 20px;
+} 
+
+/* Texto de experiencia */
+#experiencia p {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0; 
+  text-align: justify;
+}
+
+/* Subtítulo "Programas que utilizo" */
+#experiencia p strong {
+  display: block;
+  margin-left: 0px;
+  margin-right: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+#proyectos p{
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Asegurar que los ítems de contacto no se corran */
+.contacto li {
+  margin-left: 0 !important;
+}
+
+/* Listado de contacto */
+.contacto {
+  margin-left: -20px;
+  margin-right: 20px;
+  padding-left: 0; /* elimina indentación del ul */
+}
+
+.contacto li {
+  margin-left: 0; /* asegura que los ítems no se corran */
+}
+
+  /* Títulos principales y subtítulos */
+  h2,
+  h3,
+  .subtitulo,
+  .alineado h2,
+  .alineado h3,
+  .alineado .subtitulo {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
+  /* Texto de secciones */
+  .texto-sobre-mi,
+  .texto-experiencia {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+  }
+
+  /* Programas que utilizo */
+  .programas-utilizados {
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* Contacto */
+  .contacto {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Galerías de proyectos */
   .galeria img,
   .contenedor-imagenes img {
     width: 100%;
@@ -459,17 +534,7 @@ footer {
     margin: 0 auto;
   }
 
-  .menu-flotante {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-  }
-
-  .menu-flotante a {
-    font-size: 0.9em;
-    padding: 8px 16px;
-  }
-
+  /* Sobre mí */
   .sobre-mi-contenido {
     flex-direction: column;
     align-items: center;
@@ -482,14 +547,13 @@ footer {
     margin: 0 auto 20px auto;
   }
 
-  .texto-sobre-mi {
-    max-width: 100%;
-    padding: 0 15px;
-    text-align: justify;
-  }
-
-  .contacto {
-    text-align: left;
-    padding: 0 15px;
+  /* Mostrar info en móvil al tocar */
+  @media (hover: none) and (pointer: coarse) {
+    .info-imagen {
+      opacity: 1;
+    }
   }
 }
+
+
+
