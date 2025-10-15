@@ -456,6 +456,13 @@ footer {
   padding-right: 0 !important;
 }
 
+#sobre-mi p{
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Asegurar que los ítems de contacto no se corran */
 .contacto li {
   margin-left: 0 !important;
@@ -463,7 +470,7 @@ footer {
 
 /* Listado de contacto */
 .contacto {
-  margin-left: -20px;
+  margin-left: -10px;
   margin-right: 20px;
   padding-left: 0; /* elimina indentación del ul */
 }
