@@ -295,6 +295,40 @@ h2 {
   flex-wrap: wrap;
 }
 
+/* Acordeón */
+.accordion-fanart {
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6D3D14;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  color: #975982;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* Estado abierto */
+.accordion-fanart.open .accordion-content {
+  max-height: 250px; 
+}
+
 .intro-proyectos {
   margin-left: 0px;
   margin-right: 20px;
@@ -521,34 +555,6 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-
-  .accordion-fanart {
-  margin-top: 1rem;
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-}
-
- .accordion-toggle {
-  background: none;
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #444;
-  cursor: pointer;
-  text-align: left;
-  padding: 0;
-  transition: color 0.3s ease;
-}
-
- .accordion-toggle:hover {
-  color: #000;
-}
-
- .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
 
   .boton-mas {
    width: 100%;
