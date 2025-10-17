@@ -175,14 +175,27 @@
       </div>
     </a>
   </div>
-</section>
 
-  
+<div class="accordion-fanart">
+  <button class="accordion-toggle">Derechos de autor</button>
+  <div class="accordion-content">
+    <p><em>Fanart presentado como ejercicio visual y narrativo sin fines comerciales o de lucro. 
+    Solo como una muestra del estilo y nivel de dibujo.</em></p>
+  </div>
+</div>
+
+
+<script>
+  document.querySelectorAll('.accordion-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const container = button.parentElement;
+      container.classList.toggle('open');
+    });
+  });
+</script>
+
+
+</section> 
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-  <footer>
-    <p>© 2026 Matías Hidalgo</p>
-  </footer>
-
 </body>
 </html>
