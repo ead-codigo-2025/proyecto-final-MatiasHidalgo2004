@@ -276,7 +276,6 @@
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-   
     const focusables = document.querySelectorAll(
       '.menu-flotante a, .menu-flotante .toggle-proyectos, .contactos button, .botones-mas button, .acciones a'
     );
@@ -284,12 +283,9 @@
     let currentIndex = 0;
 
     document.addEventListener('keydown', (e) => {
-      // Scroll flechas arriba/abajo
-      if (e.key === 'ArrowDown') {
-        window.scrollBy({ top: 50, behavior: 'smooth' });
-      }
-      if (e.key === 'ArrowUp') {
-        window.scrollBy({ top: -50, behavior: 'smooth' });
+      
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        return; 
       }
 
       // Navegación horizontal flechas izquierda/derecha
@@ -303,8 +299,10 @@
         currentIndex = (currentIndex - 1 + focusables.length) % focusables.length;
         focusables[currentIndex].focus();
       }
+
     });
   });
+</script>
 </script>
 </body>
 </html>
