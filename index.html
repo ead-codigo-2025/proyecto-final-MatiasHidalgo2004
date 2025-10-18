@@ -303,12 +303,6 @@
         currentIndex = (currentIndex - 1 + focusables.length) % focusables.length;
         focusables[currentIndex].focus();
       }
-
-      // Activar con Enter
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        focusables[currentIndex].click();
-      }
     });
   });
 </script>
