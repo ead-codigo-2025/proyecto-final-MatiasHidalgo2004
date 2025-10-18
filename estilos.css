@@ -136,7 +136,78 @@ header.degradado > * {
   background: transparent;
 }
 
-/* Alineación general */
+/* Bloque Proyectos */
+.menu-proyectos {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón principal */
+.toggle-proyectos {
+  width: 150px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 400;
+  font-size: 1.07rem; 
+  color: #fff;
+  background-color: rgba(151, 89, 130, 0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid #975982;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón principal */
+.toggle-proyectos:hover {
+  color: #975982;
+  background-color: #fff;
+}
+
+/* Estado abierto */
+.menu-proyectos.open .toggle-proyectos {
+  background-color: #fff;
+  color: #975982;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Submenú oculto */
+.submenu-proyectos {
+  width: 150px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border: none; 
+  transition: max-height 0.4s ease, border 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Enlaces internos submenú */
+.submenu-proyectos a {
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; 
+  color: #975982;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 0; 
+  border-top: 1px solid #975982; 
+  transition: background 0.3s ease;
+}
+
+/* Hover sub‑botones */
+.submenu-proyectos a:hover {
+  background-color: rgba(151, 89, 130, 0.1);
+}
+
+.menu-proyectos.open .submenu-proyectos {
+  max-height: 500px;
+ 
+}
+
+/* Alineación */
 .alineado {
   padding-left: 20px;
   padding-right: 20px;
