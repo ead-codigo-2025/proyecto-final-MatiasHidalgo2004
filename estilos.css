@@ -92,6 +92,7 @@ header.degradado > * {
 
 /* Menú */
 .menu-flotante {
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -528,6 +529,18 @@ footer {
   padding: 20px;
   background-color: #f0f0f0;
   font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+  .menu-flotante a,
+  .toggle-proyectos {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  .submenu-proyectos a {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
 }
 
 /* Responsive */
