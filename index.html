@@ -22,8 +22,17 @@
   <nav class="menu-flotante">
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-  </nav>
+   <div class="menu-proyectos">
+    <button class="toggle-proyectos">Proyectos ▾</button>
+    <div class="submenu-proyectos">
+      <a href="#fanarts">Fanarts</a>
+      <a href="#ilustraciones">Ilustraciones</a>
+      <a href="#personajes">D. personajes</a>
+      <a href="#comic">Cómic</a>
+    </div>
+  </div>
+</nav>
+
 
   <main>
     <section id="sobre-mi" class="alineado" data-aos="fade-up">
@@ -151,8 +160,8 @@
         personajes y páginas de cómic:
       </p>
 
-      <section class="bloque-fanart">
-        <p class="subtitulo">FANARTS</p>
+      <section id="fanarts" class="bloque-fanart">
+  <p class="subtitulo">FANARTS</p>
         <div class="fanart-preview">
           <div class="contenedor-imagenes">
             <a href="imagenes/fanart1.jpg" data-lightbox="propias" data-title="fanart 1">
@@ -168,8 +177,8 @@
         </div>
       </section>
 
-      <section class="bloque-ilustraciones">
-        <p class="subtitulo">ILUSTRACIONES</p>
+      <section id="ilustraciones" class="bloque-ilustraciones">
+  <p class="subtitulo">ILUSTRACIONES</p>
         <div class="ilustraciones-preview">
           <div class="galeria">
             <img src="imagenes/ilustracion1.jpg" alt="Ilustración propia 1" loading="lazy">
@@ -181,8 +190,8 @@
         </div>
       </section>
 
-      <section class="bloque-personajes">
-        <p class="subtitulo">DISEÑO DE PERSONAJES</p>
+      <section id="personajes" class="bloque-personajes">
+  <p class="subtitulo">DISEÑO DE PERSONAJES</p>
         <div class="personajes-preview">
           <div class="galeria">
             <img src="imagenes/personaje1.jpg" alt="Diseño de personajes 1" loading="lazy">
@@ -194,8 +203,8 @@
         </div>
       </section>
 
-      <section class="bloque-comic">
-        <p class="subtitulo">CÓMIC</p>
+      <section id="comic" class="bloque-comic">
+  <p class="subtitulo">CÓMIC</p>
         <div class="comic-preview">
           <div class="galeria">
             <img src="imagenes/comic1.jpg" alt="cómic 1" loading="lazy">
@@ -232,6 +241,34 @@
       offset: 100
     });
   </script>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 100
+    });
+  </script>
+
+  <!-- Script menú Proyectos -->
+  <script>
+    const menuProyectos = document.querySelector('.menu-proyectos');
+    const toggleBtn = menuProyectos.querySelector('.toggle-proyectos');
+
+    toggleBtn.addEventListener('click', () => {
+      menuProyectos.classList.toggle('open');
+    });
+
+    // Cierra si hace clic fuera
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-proyectos')) {
+        menuProyectos.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
+
 </body>
 </html>
 
