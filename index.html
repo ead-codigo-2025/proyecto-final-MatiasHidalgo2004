@@ -250,22 +250,34 @@
     });
   </script>
 
-  <!-- Script menú Proyectos -->
-  <script>
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const menuProyectos = document.querySelector('.menu-proyectos');
     const toggleBtn = menuProyectos.querySelector('.toggle-proyectos');
+    const submenuLinks = menuProyectos.querySelectorAll('.submenu-proyectos a');
 
+    // Abrir/cerrar al hacer clic boton
     toggleBtn.addEventListener('click', () => {
       menuProyectos.classList.toggle('open');
     });
 
-    // Cierra si hace clic fuera
+    // Cerrar clic fuera del menú
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.menu-proyectos')) {
         menuProyectos.classList.remove('open');
       }
     });
-  </script>
+
+    
+    submenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        setTimeout(() => {
+          menuProyectos.classList.remove('open');
+        }, 150); 
+      });
+    });
+  });
+</script>
 </body>
 </html>
 
