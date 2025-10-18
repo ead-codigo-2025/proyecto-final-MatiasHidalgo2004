@@ -137,6 +137,25 @@ header.degradado > * {
   background: transparent;
 }
 
+.menu-flotante a,
+.menu-flotante .toggle-proyectos {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/* Animación */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.menu-flotante a:nth-child(1) { animation-delay: 0.3s; }
+.menu-flotante a:nth-child(2) { animation-delay: 0.3s; }
+.toggle-proyectos  a:nth-child(3) { animation-delay: 0.3s; }
+
 /* Bloque Proyectos */
 .menu-proyectos {
   position: relative;
