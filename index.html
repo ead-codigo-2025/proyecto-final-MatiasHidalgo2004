@@ -274,6 +274,44 @@
     });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+   
+    const focusables = document.querySelectorAll(
+      '.menu-flotante a, .menu-flotante .toggle-proyectos, .contactos button, .botones-mas button, .acciones a'
+    );
+
+    let currentIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+      // Scroll flechas arriba/abajo
+      if (e.key === 'ArrowDown') {
+        window.scrollBy({ top: 50, behavior: 'smooth' });
+      }
+      if (e.key === 'ArrowUp') {
+        window.scrollBy({ top: -50, behavior: 'smooth' });
+      }
+
+      // Navegación horizontal flechas izquierda/derecha
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        currentIndex = (currentIndex + 1) % focusables.length;
+        focusables[currentIndex].focus();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        currentIndex = (currentIndex - 1 + focusables.length) % focusables.length;
+        focusables[currentIndex].focus();
+      }
+
+      // Activar con Enter
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        focusables[currentIndex].click();
+      }
+    });
+  });
+</script>
 </body>
 </html>
 
