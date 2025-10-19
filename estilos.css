@@ -684,10 +684,22 @@ footer {
     margin: 0 auto 20px auto;
   }
 
-  /* Mostrar info en móvil al tocar */
   @media (hover: none) and (pointer: coarse) {
     .info-imagen {
       opacity: 1;
+      @media (max-width: 768px) {
+  .imagen-con-info {
+    position: relative;
+  }
+
+  .info-imagen {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    transform: none;
+  }
+}
     }
   }
 }
