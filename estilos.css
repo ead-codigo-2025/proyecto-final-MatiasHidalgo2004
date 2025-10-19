@@ -593,7 +593,7 @@ footer {
   padding-right: 0 !important;
 }
 
-/* Asegurar que los ítems de contacto no se corran */
+
 .contacto li {
   margin-left: 0 !important;
 }
@@ -602,11 +602,11 @@ footer {
 .contacto {
   margin-left: -20px;
   margin-right: 20px;
-  padding-left: 0; /* elimina indentación del ul */
+  padding-left: 0; 
 }
 
 .contacto li {
-  margin-left: 0; /* asegura que los ítems no se corran */
+  margin-left: 0; 
 }
 
   /* Títulos principales y subtítulos */
