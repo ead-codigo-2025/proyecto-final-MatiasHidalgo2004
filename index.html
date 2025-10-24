@@ -316,24 +316,19 @@
     <p>© 2026 Matías Hidalgo</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      offset: 100
-    });
-  </script>
-  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      offset: 100
-    });
-  </script>
+  <!-- AOS (solo una vez) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    offset: 100
+  });
+</script>
 
- <script>
+<!-- Script principal -->
+<script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Submenús flotantes
     const menus = [
       {
         container: document.querySelector('.menu-proyectos'),
@@ -347,27 +342,19 @@
       }
     ];
 
-    menus.forEach(({ container, toggle, links }, index) => {
+    menus.forEach(({ container, toggle, links }) => {
       toggle.addEventListener('click', () => {
         const isOpen = container.classList.contains('open');
-
-        // Cierra todos los submenús
         menus.forEach(m => m.container.classList.remove('open'));
-
-        // Si no estaba abierto, lo abrimos (toggle real)
-        if (!isOpen) {
-          container.classList.add('open');
-        }
+        if (!isOpen) container.classList.add('open');
       });
 
-      // Cerrar al hacer clic fuera
       document.addEventListener('click', (e) => {
         if (!e.target.closest(`.${container.classList[0]}`)) {
           container.classList.remove('open');
         }
       });
 
-      // Cerrar al hacer clic en un enlace
       links.forEach(link => {
         link.addEventListener('click', () => {
           setTimeout(() => {
@@ -376,6 +363,51 @@
         });
       });
     });
+
+    // Scrollspy 
+const botonesMenu = document.querySelectorAll('.menu-flotante a');
+const botonesGrupo = {
+  proyectos: document.querySelector('.toggle-proyectos'),
+  universidad: document.querySelector('.toggle-universidad')
+};
+
+const grupos = {
+  proyectos: ['fanarts', 'ilustraciones', 'ilustraciones-imagen', 'personajes', 'comic', 'sketch'],
+  universidad: ['universidad', 'animales', 'plantas', 'estructuras']
+};
+
+const secciones = document.querySelectorAll('section[id]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+
+      // Limpiar todos los botones
+      botonesMenu.forEach(b => b.classList.remove('activo'));
+      Object.values(botonesGrupo).forEach(b => b.classList.remove('activo'));
+
+      // Activar botón individual si existe
+      const botonDirecto = document.querySelector(`.menu-flotante a[href="#${id}"]`);
+      if (botonDirecto) botonDirecto.classList.add('activo');
+
+      // Activar botón de grupo si corresponde
+      for (const grupo in grupos) {
+        if (grupos[grupo].includes(id)) {
+          botonesGrupo[grupo].classList.add('activo');
+        }
+      }
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.6
+});
+
+secciones.forEach(seccion => observer.observe(seccion));
+
+    secciones.forEach(seccion => observer.observe(seccion));
 
     // Navegación con flechas
     const focusables = document.querySelectorAll(
@@ -401,6 +433,4 @@
     });
   });
 </script>
-
-
 
