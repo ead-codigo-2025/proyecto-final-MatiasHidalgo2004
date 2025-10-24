@@ -347,12 +347,17 @@
       }
     ];
 
-    // Abrir/cerrar submenús
-    menus.forEach(({ container, toggle, links }) => {
+    menus.forEach(({ container, toggle, links }, index) => {
       toggle.addEventListener('click', () => {
-        // Cierra todos los demás submenús antes de abrir este
+        const isOpen = container.classList.contains('open');
+
+        // Cierra todos los submenús
         menus.forEach(m => m.container.classList.remove('open'));
-        container.classList.toggle('open');
+
+        // Si no estaba abierto, lo abrimos (toggle real)
+        if (!isOpen) {
+          container.classList.add('open');
+        }
       });
 
       // Cerrar al hacer clic fuera
