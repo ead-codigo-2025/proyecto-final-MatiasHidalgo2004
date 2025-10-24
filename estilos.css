@@ -119,26 +119,32 @@ header.degradado > * {
   border: 2px solid #975982;
 }
 
-.menu-flotante a:hover {
+.menu-flotante a:hover,
+.menu-universidad a:hover {
   color: #975982;
   background-color: #fff;
 }
 
-.menu-flotante::-webkit-scrollbar {
+.menu-flotante::-webkit-scrollbar,
+.menu-universidad::-webkit-scrollbar {
   height: 8px;
 }
 
-.menu-flotante::-webkit-scrollbar-thumb {
+.menu-flotante::-webkit-scrollbar-thumb,
+.menu-universidad::-webkit-scrollbar-thumb  {
   background-color: #6D3D14;
   border-radius: 4px;
 }
 
-.menu-flotante::-webkit-scrollbar-track {
+.menu-flotante::-webkit-scrollbar-track,
+.menu-universidad::-webkit-scrollbar-track {
   background: transparent;
 }
 
 .menu-flotante a,
-.menu-flotante .toggle-proyectos {
+.menu-flotante, .toggle-proyectos,
+.menu-universidad a,
+.menu-universidad,.toggle-universidad {
   opacity: 0;
   transform: translateX(-50px);
   animation: slideIn 0.6s ease-out forwards;
@@ -156,14 +162,19 @@ header.degradado > * {
 .menu-flotante a:nth-child(2) { animation-delay: 0.3s; }
 .toggle-proyectos  a:nth-child(3) { animation-delay: 0.3s; }
 
-/* Bloque Proyectos */
-.menu-proyectos {
+.menu-universidad a:nth-child(1) { animation-delay: 0.3s; }
+.menu-universidad a:nth-child(2) { animation-delay: 0.3s; }
+.toggle-universidad  a:nth-child(3) { animation-delay: 0.3s; }
+
+/* Bloque Proyectos y universidad */
+.menu-proyectos,
+.menu-universidad {
   position: relative;
   display: inline-block;
 }
 
 /* Botón principal */
-.toggle-proyectos {
+.toggle-proyectos, .toggle-universidad {
   width: 150px;
   font-family: 'Fredoka', sans-serif;
   font-weight: 400;
@@ -178,13 +189,15 @@ header.degradado > * {
 }
 
 /* Botón principal */
-.toggle-proyectos:hover {
+.toggle-proyectos:hover,
+.toggle-universidad:hover {
   color: #975982;
   background-color: #fff;
 }
 
 /* Estado abierto */
-.menu-proyectos.open .toggle-proyectos {
+.menu-proyectos.open .toggle-proyectos,
+.menu-universidad.open .toggle-universidad {
   background-color: #fff;
   color: #975982;
   border-bottom-left-radius: 0;
@@ -192,7 +205,8 @@ header.degradado > * {
 }
 
 /* Submenú oculto */
-.submenu-proyectos {
+.submenu-proyectos,
+.submenu-universidad {
   width: 150px;
   max-height: 0;
   overflow: hidden;
@@ -204,7 +218,8 @@ header.degradado > * {
 }
 
 /* Enlaces internos submenú */
-.submenu-proyectos a {
+.submenu-proyectos a, 
+.submenu-universidad a {
   text-decoration: none;
   font-family: 'Fredoka', sans-serif;
   font-weight: 400;
@@ -218,11 +233,13 @@ header.degradado > * {
 }
 
 /* Hover sub‑botones */
-.submenu-proyectos a:hover {
+.submenu-proyectos a:hover, 
+.submenu-universidad a:hover {
   background-color: rgba(151, 89, 130, 0.1);
 }
 
-.menu-proyectos.open .submenu-proyectos {
+.menu-proyectos.open .submenu-proyectos,
+.menu-universidad.open .submenu-universidad {
   max-height: 500px;
  
 }
@@ -334,6 +351,16 @@ h2 {
   color: #975982;
 }
 
+.WIKI {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.WIKI:hover {
+  color: #975982;
+}
+
 /* Capital destacada */
 .capital {
   font-size: 1.6em;
@@ -365,8 +392,13 @@ h2 {
 /* Bloques de proyectos */
 .bloque-fanart,
 .bloque-ilustraciones,
+.bloque-ilustraciones-imagen,
 .bloque-personajes,
-.bloque-comic {
+.bloque-comic,
+.bloque-sketch,
+.bloque-animales,
+.bloque-plantas,
+.bloque-estructuras {
   margin-bottom: 40px;
   max-width: 900px;
   margin-left: auto;
@@ -377,8 +409,13 @@ h2 {
 
 .fanart-preview,
 .ilustraciones-preview,
+.ilustraciones-imagen-preview,
 .personajes-preview,
-.comic-preview {
+.comic-preview, 
+.sketch-preview,
+.animales-preview,
+.plantas-preview,
+.estructuras-preview {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -586,6 +623,15 @@ footer {
   color: #000000;
 }
 
+/* Texto de universidad */
+#universidad p {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0; 
+  text-align: justify;
+}
+
+
 #proyectos p{
   margin-left: 20px !important;
   margin-right: 20px !important;
@@ -622,7 +668,8 @@ footer {
 
   /* Texto de secciones */
   .texto-sobre-mi,
-  .texto-experiencia {
+  .texto-experiencia
+  .texto-universidad {
     padding-left: 20px;
     padding-right: 20px;
     text-align: justify;
@@ -653,8 +700,13 @@ footer {
 
   .fanart-preview,
   .ilustraciones-preview,
+  .ilustraciones-imagen-preview,
   .personajes-preview,
-  .comic-preview {
+  .comic-preview,
+  .sketch-preview,
+  .animales-preview,
+  .plantas-preview,
+  .estructuras-preview {
     flex-direction: column;
     align-items: center;
   }
