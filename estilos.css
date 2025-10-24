@@ -95,7 +95,7 @@ header.degradado > * {
   max-width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
   position: sticky;
   top: 0;
@@ -105,6 +105,12 @@ header.degradado > * {
   scrollbar-width: auto;
   scrollbar-color: #6D3D14 transparent;
   z-index: 1000;
+}
+
+.menu-flotante a.activo {
+  background-color: #fff;
+  color: #975982;
+  border: 2px solid #975982;
 }
 
 .menu-flotante a {
@@ -195,6 +201,13 @@ header.degradado > * {
   background-color: #fff;
 }
 
+.toggle-proyectos.activo,
+.toggle-universidad.activo {
+  background-color: #fff;
+  color: #975982;
+  border: 2px solid #975982;
+}
+
 /* Estado abierto */
 .menu-proyectos.open .toggle-proyectos,
 .menu-universidad.open .toggle-universidad {
@@ -278,7 +291,7 @@ section:not(.despedida) {
   flex: 1;
   font-size: clamp(1em, 1.8vw, 1.1em);
   line-height: 1.6;
-  text-align: justify;
+  text-align: justify left;
   padding-right: 10px;
 }
 
