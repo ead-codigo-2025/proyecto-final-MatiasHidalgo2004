@@ -27,12 +27,23 @@
     <div class="submenu-proyectos">
       <a href="#fanarts">Fanarts</a>
       <a href="#ilustraciones">Ilustraciones</a>
+      <a href="#ilustraciones-imagen">Ilustraciones 2</a>
       <a href="#personajes">D. personajes</a>
       <a href="#comic">Cómic</a>
-    </div>
+      <a href="#sketch">Sketch</a>
+     </div>
   </div>
-</nav>
 
+  <div class="menu-universidad">
+    <button class="toggle-universidad">Universidad ▾</button>
+    <div class="submenu-universidad">
+      <a href="#animales">Animales</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#estructuras">Estructuras</a>
+      </div>
+  </div>
+
+</nav>
 
   <main>
     <section id="sobre-mi" class="alineado" data-aos="fade-up">
@@ -177,11 +188,24 @@
   <p class="subtitulo">ILUSTRACIONES</p>
         <div class="ilustraciones-preview">
           <div class="galeria">
+            <img src="imagenes/ilustracion14.jpg" alt="Ilustración propia 14" loading="lazy">
+            <img src="imagenes/ilustracion15.jpg" alt="Ilustración propia 15" loading="lazy">
+          </div>
+          <div class="boton-mas">
+            <a href="ilustraciones.html">Más →</a>
+          </div>
+        </div>
+      </section>
+
+       <section id="ilustraciones-imagen" class="bloque-ilustraciones-imagen">
+  <p class="subtitulo">ILUSTRACIONES SOBRE IMAGENES</p>
+        <div class="ilustraciones-imagen-preview">
+          <div class="galeria">
             <img src="imagenes/ilustracion1.jpg" alt="Ilustración propia 1" loading="lazy">
             <img src="imagenes/ilustracion4.jpg" alt="Ilustración propia 4" loading="lazy">
           </div>
           <div class="boton-mas">
-            <a href="ilustraciones.html">Más →</a>
+            <a href="ilustraciones-imagen.html">Más →</a>
           </div>
         </div>
       </section>
@@ -211,8 +235,70 @@
           </div>
         </div>
       </section>
+
+     <section id="sketch" class="bloque-sketch">
+  <p class="subtitulo">SKETCHS</p>
+        <div class="sketch-preview">
+          <div class="galeria">
+            <img src="imagenes/sketch1.jpg" alt="sketch 1" loading="lazy">
+            <img src="imagenes/sketch2.jpg" alt="sketch 2" loading="lazy">
+          </div>
+          <div class="boton-mas">
+            <a href="sketch.html">Más →</a>
+          </div>
+        </div>
+      </section>
     </section>
+
   </main>
+
+  <section id="universidad" class="alineado" data-aos="fade-up">
+      <h2>Proyectos universitarios</h2>
+      <div class="texto-universidad" data-aos="fade-left"></div>
+      <p>
+        Aquí podrán ver un listado de ilustraciones elaboradas en trabajos 
+        realizados durante mi jornada universitaria en los últimos 4 años.
+        <em>Para ver más de mis trabajos universitarios, vea en mi</em> <a href=https://wiki.ead.pucv.cl/Matías_Hidalgo target="_blank" class="WIKI"><b>WIKI</b></a>
+      </p>
+
+<section id="animales" class="bloque-animales">
+  <p class="subtitulo">DIBUJO ANIMAL</p>
+        <div class="animales-preview">
+          <div class="galeria">
+            <img src="imagenes/animal1.jpg" alt="animal 1" loading="lazy">
+            <img src="imagenes/animal2.jpg" alt="animal 2" loading="lazy">
+          </div>
+          <div class="boton-mas">
+            <a href="animales.html">Más →</a>
+          </div>
+        </div>
+      </section>
+
+    <section id="plantas" class="bloque-plantas">
+  <p class="subtitulo">DIBUJO BOTANICO</p>
+        <div class="plantas-preview">
+          <div class="galeria">
+            <img src="imagenes/plantas1.jpg" alt="plantas 1" loading="lazy">
+            <img src="imagenes/plantas2.jpg" alt="plantas 2" loading="lazy">
+          </div>
+          <div class="boton-mas">
+            <a href="plantas.html">Más →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="estructuras" class="bloque-estructuras">
+  <p class="subtitulo">DIBUJO ESTRUCTURAL</p>
+        <div class="estructuras-preview">
+          <div class="galeria">
+            <img src="imagenes/estructura1.png" alt="estructura 1" loading="lazy">
+            <img src="imagenes/estructura2.png" alt="estructura 2" loading="lazy">
+          </div>
+          <div class="boton-mas">
+            <a href="estructuras.html">Más →</a>
+          </div>
+        </div>
+      </section>
 
   <section class="despedida">
     <p class="texto-despedida" data-aos="fade-up" data-aos-duration="1000">
@@ -225,7 +311,7 @@
          data-aos-duration="1200"
          data-aos-delay="300">
   </section>
-
+ </section>
   <footer>
     <p>© 2026 Matías Hidalgo</p>
   </footer>
@@ -248,68 +334,68 @@
 
  <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const menuProyectos = document.querySelector('.menu-proyectos');
-    const toggleBtn = menuProyectos.querySelector('.toggle-proyectos');
-    const submenuLinks = menuProyectos.querySelectorAll('.submenu-proyectos a');
-
-    // Abrir/cerrar al hacer clic boton
-    toggleBtn.addEventListener('click', () => {
-      menuProyectos.classList.toggle('open');
-    });
-
-    // Cerrar clic fuera del menú
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.menu-proyectos')) {
-        menuProyectos.classList.remove('open');
+    const menus = [
+      {
+        container: document.querySelector('.menu-proyectos'),
+        toggle: document.querySelector('.toggle-proyectos'),
+        links: document.querySelectorAll('.submenu-proyectos a')
+      },
+      {
+        container: document.querySelector('.menu-universidad'),
+        toggle: document.querySelector('.toggle-universidad'),
+        links: document.querySelectorAll('.submenu-universidad a')
       }
-    });
+    ];
 
-    
-    submenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        setTimeout(() => {
-          menuProyectos.classList.remove('open');
-        }, 150); 
+    // Abrir/cerrar submenús
+    menus.forEach(({ container, toggle, links }) => {
+      toggle.addEventListener('click', () => {
+        // Cierra todos los demás submenús antes de abrir este
+        menus.forEach(m => m.container.classList.remove('open'));
+        container.classList.toggle('open');
+      });
+
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest(`.${container.classList[0]}`)) {
+          container.classList.remove('open');
+        }
+      });
+
+      // Cerrar al hacer clic en un enlace
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(() => {
+            container.classList.remove('open');
+          }, 150);
+        });
       });
     });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
+
+    // Navegación con flechas
     const focusables = document.querySelectorAll(
-      '.menu-flotante a, .menu-flotante .toggle-proyectos, .contactos button, .botones-mas button, .acciones a'
+      '.menu-flotante a, .menu-flotante .toggle-proyectos, .menu-flotante .toggle-universidad, .contactos button, .botones-mas button, .acciones a'
     );
 
     let currentIndex = 0;
 
     document.addEventListener('keydown', (e) => {
-      
-      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        return; 
-      }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') return;
 
-      // Navegación horizontal flechas izquierda/derecha
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         currentIndex = (currentIndex + 1) % focusables.length;
         focusables[currentIndex].focus();
       }
+
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         currentIndex = (currentIndex - 1 + focusables.length) % focusables.length;
         focusables[currentIndex].focus();
       }
-
     });
   });
 </script>
-</script>
-</body>
-</html>
-
-</body>
-</html>
-
 
 
 
